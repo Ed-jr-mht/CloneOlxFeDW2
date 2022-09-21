@@ -1,7 +1,8 @@
+import './App.css'
 import React from 'react'
 import { connect } from 'react-redux'
-import { BrowserRouter } from 'react-router-dom';
-import Router from './Routers';
+import { BrowserRouter } from 'react-router-dom'
+import Routes from './Routes'
 import { Template } from './components/MainComponents'
 import Header from './components/partials/Header'
 import Footer from './components/partials/Footer'
@@ -10,22 +11,24 @@ const Page = (props) => {
   return (
     <BrowserRouter>
       <Template>
-        <Header/>
-        <Router/>
-        <Footer/>
+        <Header />
+        <Routes />
+        <Footer />
       </Template>
     </BrowserRouter>
   )
 }
-const mapStateToProps = (state) =>{
+
+const mapStateToProps = (state) => {
   return {
     user: state.user
   }
 }
-const mapDispatchProps = (dispatch) =>{
-  return{
+
+const mapDispatchToProps = (dispatch) => {
+  return {
 
   }
 }
-export default connect(mapStateToProps,mapDispatchProps) (Page)
 
+export default connect(mapStateToProps, mapDispatchToProps) (Page)
